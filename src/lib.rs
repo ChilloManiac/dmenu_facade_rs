@@ -268,8 +268,6 @@ impl<'a> DMenu<'a> {
             None => Err(Box::new(ItemNotFoundError)),
         }
     }
-
-    // pub async fn execute_consume_async<T: Display>(self, list: Vec<T>) -> Result<T
 }
 
 /// A struct for containing a color string.

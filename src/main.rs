@@ -2,7 +2,7 @@ use dmenu_facade::*;
 use std::error::Error;
 use std::fmt::Display;
 
-fn main() -> Result<(), Box<dyn Error>> {
+pub fn main() -> Result<(), Box<dyn Error>> {
     let items = vec![
         TestStruct {
             id: 0,
@@ -18,12 +18,11 @@ fn main() -> Result<(), Box<dyn Error>> {
         },
     ];
 
-    if let Ok(item) = DMenu::default()
-        .vertical_with_lines(2)
-        .execute_consume(items)
-    {
-        println!("{}", item.id);
-    }
+    println!(
+        "id: {}",
+        DMenu::default().execute_consume(items).unwrap().id
+    );
+
     Ok(())
 }
 
