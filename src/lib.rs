@@ -268,6 +268,17 @@ impl<'a> DMenu<'a> {
             None => Err(Box::new(ItemNotFoundError)),
         }
     }
+
+    pub fn execute_as_input(self) -> Result<String, Box<dyn Error>> {
+        let shell_output = Command::new("sh")
+            .arg("-c")
+            .arg(format!("echo -e '\n' | {}", self.to_command()))
+            .output()?;
+
+        let mut string = String::from_utf8(shell_output.stdout)?;
+        string.pop(); // remove newline
+        Ok(string)
+    }
 }
 
 /// A struct for containing a color string.

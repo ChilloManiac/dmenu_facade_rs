@@ -1,6 +1,6 @@
 [package]
 name = "dmenu_facade"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Christoffer Nørbjerg <Chrisnorbjerg@gmail.com>"]
 edition = "2018"
 description = "A rust wrapper for interacting through dmenu. Depends on dmenu being installed"
@@ -19,3 +19,7 @@ path = "examples/simple.rs"
 [[example]]
 name = "complex"
 path = "examples/complex_struct.rs"
+
+[[example]]
+name = "input"
+path = "examples/input.rs"
