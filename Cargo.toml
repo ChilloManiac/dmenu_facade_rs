@@ -12,3 +12,10 @@ categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[example]]
+name = "simple"
+path = "examples/simple.rs"
+
+[[example]]
+name = "complex"
+path = "examples/complex_struct.rs"
