@@ -269,6 +269,7 @@ impl<'a> DMenu<'a> {
         }
     }
 
+    /// Will launch the configured DMenu without any items and return the string typed by the user
     pub fn execute_as_input(self) -> Result<String, Box<dyn Error>> {
         let shell_output = Command::new("sh")
             .arg("-c")
