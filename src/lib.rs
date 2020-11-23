@@ -229,7 +229,7 @@ impl<'a> DMenu<'a> {
             map.insert(key, item);
         }
 
-        let shell_output = Command::new("sh")
+        let shell_output = Command::new("bash")
             .args(&[
                 "-c",
                 &format!("echo -e '{}' | {}", list_string, self.to_command()),
